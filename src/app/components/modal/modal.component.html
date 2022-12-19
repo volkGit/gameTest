@@ -1,0 +1,16 @@
+<div
+    class="modal"
+    (click)="modalService.close()">
+</div>
+<div class="modal-content">
+    <div class="modal-header">
+        <button
+            type="button"
+            class="btn-close"
+            (click)="modalService.close()">
+        </button>
+    </div>
+    <div class="modal-body">
+        <ng-content></ng-content>
+    </div>
+</div>

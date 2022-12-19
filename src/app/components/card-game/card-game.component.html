@@ -1,0 +1,11 @@
+<div class="card-game" (mouseover)="show = true" (mouseleave)="show = false">
+    <img [src]="srcLink" />
+    <div class="btn-card">
+        <div>
+            <button class="btn btn-blue" (click)="startDemo()">Демо</button>
+        </div>
+        <div>
+            <button class="btn btn-green" (click)="startGame()">Запустить игру</button>
+        </div>
+    </div>
+</div>
