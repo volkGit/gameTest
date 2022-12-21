@@ -1,6 +1,6 @@
-<div class="card-game" (mouseover)="show = true" (mouseleave)="show = false">
+<div class="card-game" (mouseover)="showBtn = true" (touchstart)="updateShowBtn()" (mouseleave)="showBtn = false">
     <img [src]="srcLink" />
-    <div class="btn-card">
+    <div class="btn-card" *ngIf="showBtn">
         <div>
             <button class="btn btn-blue" (click)="startDemo()">Демо</button>
         </div>

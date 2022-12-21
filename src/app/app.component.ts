@@ -10,7 +10,8 @@ import { ModalService } from './services/modal.service';
 export class AppComponent implements OnInit {
     title = 'card-test'
     modalText: string = ''
-    initComponents: Game[] = [] 
+    initComponents: Game[] = []
+    indexOld: number | undefined 
 
     constructor(public modalService: ModalService) {
     }
@@ -18,12 +19,21 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         for (let i = 0; i < 42; i++) {
             this.initComponents.push({
-                src: '/assets/images/mk.jpeg'
+                src: '/assets/images/mk.jpeg',
+                showBtn: false
             })
         }
     }
 
     setText(text: string) {
         this.modalText = text
+    }
+
+    updateShow(index: number) {
+        if (this.indexOld !== undefined) {
+            this.initComponents[this.indexOld].showBtn = false
+        }
+        this.indexOld = index
+        this.initComponents[index].showBtn = true
     }
 }

@@ -1,8 +1,10 @@
 <div class="grid">
     <app-card-game
         (setText)="setText($event)"
-        *ngFor="let item of initComponents"
-        [srcLink]="item.src">
+        *ngFor="let item of initComponents let idx = index"
+        (updateShow)="updateShow(idx)"
+        [srcLink]="item.src"
+        [showBtn]="item.showBtn">
     </app-card-game>
 </div>
 <app-modal *ngIf="modalService.isVisible$ | async">

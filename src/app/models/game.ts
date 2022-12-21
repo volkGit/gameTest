@@ -1,3 +1,4 @@
 export type Game = {
-    src: string
+    src: string,
+    showBtn: boolean
 }
